@@ -14,10 +14,15 @@ app.use(userRoutes);
 app.use(productRoutes);
 app.use(orderRoutes);
 
-mongoose.connect("mongodb://localhost:27017/shopjsv2");
+mongoose.connect("mongodb://localhost:27017/shopjsv2")
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
+
 
 app.all("*", (req, res) => {
   res.status(404).json({ message: "This route does not exist" });
 });
 
-app.listen(4000, () => console.log("Server started"));
+const PORT = 4000;
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
