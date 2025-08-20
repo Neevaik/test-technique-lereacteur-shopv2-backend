@@ -8,7 +8,7 @@ const orderRoutes = require("./routes/order.js");
 
 const app = express();
 app.use(cors({
-  origin: ["http://localhost:3000", "https://test-technique-lereacteur-shopv2-ba.vercel.app/"],
+  origin: ["http://localhost:3000", "https://test-technique-lereacteur-shopv2-ba.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
