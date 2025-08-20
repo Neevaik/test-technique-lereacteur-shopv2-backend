@@ -16,7 +16,6 @@ app.use(orderRoutes);
 
 mongoose.connect("mongodb://localhost:27017/shopjsv2")
   .then(() => console.log("MongoDB connected"))
-  .catch(err => console.error("MongoDB connection error:", err));
 
 
 app.all("*", (req, res) => {
