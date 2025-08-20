@@ -7,7 +7,11 @@ const productRoutes = require("./routes/product.js");
 const orderRoutes = require("./routes/order.js");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://test-technique-lereacteur-shopv2-ba.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json());
 
 app.use(userRoutes);
